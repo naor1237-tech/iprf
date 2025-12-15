@@ -1,0 +1,7 @@
+{
+  "name": "D&I Clinic - IPRF Hair Restoration",
+  "description": "דף נחיתה לטיפולי שיקום שיער בשיטת IPRF בקליניקה של לידור הלל וד\"ר חאלד בגבעת אבני.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
