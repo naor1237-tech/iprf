@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://naor1237-tech.github.io/iprf/sitemap.xml
+Sitemap: https://party-pool.netlify.app/sitemap.xml
