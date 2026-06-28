@@ -1,13 +1,10 @@
 name: Deploy to GitHub Pages
 
-# NOTE: GitHub Pages on a PRIVATE repo requires a paid plan. On the free
-# plan, make the repository PUBLIC first, then either run this workflow
-# manually (Actions tab → "Run workflow") or add a push trigger:
-#   on:
-#     push:
-#       branches: [main]
-# Until then this workflow is manual-only so it doesn't fail on every push.
+# Pages is enabled (Source = GitHub Actions). The site auto-deploys on every
+# push to main, and can also be run manually from the Actions tab.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -29,10 +26,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configure Pages (enable if needed)
+      - name: Configure Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
