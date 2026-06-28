@@ -1,43 +1,376 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>D&I Clinic - שיקום שיער IPRF</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&family=Assistant:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Assistant', sans-serif;
-      }
-      h1, h2, h3, h4, h5, h6 {
-        font-family: 'Heebo', sans-serif;
-      }
-      .gold-gradient {
-        background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-      }
-      .text-gold {
-        color: #b38728;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-icons/": "https://esm.sh/react-icons@^5.5.0/",
-    "tailwindcss": "https://esm.sh/tailwindcss@^4.1.18",
-    "next": "https://esm.sh/next@^16.0.10",
-    "next/": "https://esm.sh/next@^16.0.10/"
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff5da2" />
+
+  <!-- Primary SEO -->
+  <title>עידו מסיבות בריכה בפדיה | מתחם פרטי לנשים – רווקות, בת מצווה וימי גיבוש</title>
+  <meta name="description" content="עידו מסיבות בריכה – מתחם בריכה פרטי ודיסקרטי לנשים בלבד בפדיה. מסיבות רווקות, בת מצווה, ימי גיבוש וימי הולדת. בריכה מחוממת, אזור מקורה, בר, ביליארד והפקה מותאמת אישית. חייגו 050-530-5186." />
+  <meta name="keywords" content="מסיבת בריכה, מסיבת רווקות, בריכה פרטית לנשים, בת מצווה בבריכה, יום גיבוש לנשים, מסיבת בריכה פדיה, מתחם אירועים לנשים, מסיבת בריכה במרכז, השרון" />
+  <meta name="author" content="עידו מסיבות בריכה" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://parttipol.netlify.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="עידו מסיבות בריכה" />
+  <meta property="og:locale" content="he_IL" />
+  <meta property="og:title" content="עידו מסיבות בריכה בפדיה | מתחם פרטי לנשים" />
+  <meta property="og:description" content="מתחם בריכה פרטי ודיסקרטי לנשים בלבד בפדיה – רווקות, בת מצווה, ימי גיבוש וימי הולדת. בריכה מחוממת, בר, ביליארד והפקה מלאה." />
+  <meta property="og:url" content="https://parttipol.netlify.app/" />
+  <meta property="og:image" content="https://parttipol.netlify.app/assets/img/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="מתחם הבריכה של עידו מסיבות בריכה בתאורת ערב" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="עידו מסיבות בריכה בפדיה | מתחם פרטי לנשים" />
+  <meta name="twitter:description" content="מתחם בריכה פרטי ודיסקרטי לנשים בלבד בפדיה – רווקות, בת מצווה, ימי גיבוש וימי הולדת." />
+  <meta name="twitter:image" content="https://parttipol.netlify.app/assets/img/og-cover.jpg" />
+
+  <!-- Icons & manifest -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="/assets/img/pool-night-blue.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <!-- Structured data: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EntertainmentBusiness",
+    "@id": "https://parttipol.netlify.app/#business",
+    "name": "עידו מסיבות בריכה",
+    "description": "מתחם בריכה פרטי ודיסקרטי לנשים בלבד בפדיה. מסיבות רווקות, בת מצווה, ימי גיבוש וימי הולדת. בריכה מחוממת, אזור מקורה, בר, ביליארד והפקה מותאמת אישית.",
+    "url": "https://parttipol.netlify.app/",
+    "image": "https://parttipol.netlify.app/assets/img/og-cover.jpg",
+    "telephone": "+972505305186",
+    "priceRange": "₪₪",
+    "currenciesAccepted": "ILS",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "פדיה 13",
+      "addressLocality": "פדיה",
+      "addressCountry": "IL"
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "מחוז המרכז" },
+      { "@type": "AdministrativeArea", "name": "השרון" },
+      { "@type": "AdministrativeArea", "name": "שפלה" }
+    ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "10:00",
+      "closes": "23:59"
+    }],
+    "sameAs": ["https://www.facebook.com/parttipol"],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "מסיבת רווקות בבריכה פרטית" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "חגיגת בת מצווה בבריכה" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "יום גיבוש וימי כיף לנשים" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "מסיבת יום הולדת ואירוע פרטי" } }
+    ]
   }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+  </script>
+
+  <!-- Structured data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "איפה ממוקם המתחם?", "acceptedAnswer": { "@type": "Answer", "text": "המתחם נמצא בפדיה 13, במרכז הארץ – נגיש מהשרון, מהשפלה וממחוז המרכז, עם חניה נוחה." } },
+      { "@type": "Question", "name": "האם המתחם באמת לנשים בלבד?", "acceptedAnswer": { "@type": "Answer", "text": "כן. המתחם פרטי ודיסקרטי ומיועד לנשים בלבד, כדי שתוכלו ליהנות בפרטיות וברוגע מלאים." } },
+      { "@type": "Question", "name": "האם הבריכה מחוממת וניתן לקיים אירוע גם בחורף?", "acceptedAnswer": { "@type": "Answer", "text": "בהחלט. הבריכה מחוממת ויש אזור מקורה ומחומם, כך שאפשר לחגוג לאורך כל השנה – גם בימים קרירים." } },
+      { "@type": "Question", "name": "אילו אירועים אפשר לקיים?", "acceptedAnswer": { "@type": "Answer", "text": "מסיבות רווקות, חגיגות בת מצווה, ימי גיבוש וימי כיף לקבוצות נשים, ימי הולדת ואירועים פרטיים נוספים." } },
+      { "@type": "Question", "name": "מה כולל המתחם?", "acceptedAnswer": { "@type": "Answer", "text": "בריכה מחוממת, אזור מקורה ומוצל, פינות ישיבה, בר, שולחן ביליארד, מערכת הגברה וטלוויזיה, ואפשרות להפקה וקישוט מותאמים אישית לפי נושא האירוע." } },
+      { "@type": "Question", "name": "איך מזמינים ומקבלים הצעת מחיר?", "acceptedAnswer": { "@type": "Answer", "text": "פשוט מאוד – שולחים הודעת וואטסאפ או מתקשרים ל-050-530-5186, מתאמים תאריך ומקבלים הצעת מחיר אישית לפי סוג האירוע ומספר המשתתפות." } }
+    ]
+  }
+  </script>
 </head>
-  <body class="bg-gray-50 text-gray-900 antialiased">
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+
+<body>
+  <a class="skip-link" href="#main">דלגו לתוכן הראשי</a>
+
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="עידו מסיבות בריכה – לעמוד הבית">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="34" height="34"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5da2"/><stop offset="1" stop-color="#19b3c6"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#bg)"/><path d="M32 11 C32 11 46 31 46 41 a14 14 0 1 1 -28 0 C18 31 32 11 32 11 Z" fill="#fff"/></svg>
+        </span>
+        <span class="brand-text">
+          <strong>עידו מסיבות בריכה</strong>
+          <small>מתחם פרטי לנשים · פדיה</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="ניווט ראשי">
+        <ul>
+          <li><a href="#events">אירועים</a></li>
+          <li><a href="#why">למה אנחנו</a></li>
+          <li><a href="#gallery">גלריה</a></li>
+          <li><a href="#how">איך זה עובד</a></li>
+          <li><a href="#faq">שאלות נפוצות</a></li>
+          <li><a href="#contact">צרו קשר</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-call" href="tel:+972505305186" aria-label="התקשרו: 050-530-5186">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+          <span>חייגו</span>
+        </a>
+        <a class="btn btn-wa" href="https://wa.me/972505305186?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%99%D7%93%D7%95%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%90%D7%AA%D7%A8%20%F0%9F%8C%B4%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%95%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%91%D7%A8%D7%99%D7%9B%D7%94" target="_blank" rel="noopener" aria-label="שלחו וואטסאפ">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.5-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8.9-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2l-.1-.5-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3c-.3.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5 0 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.5z"/></svg>
+          <span>וואטסאפ</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="ניווט נייד" hidden>
+      <a href="#events">אירועים</a>
+      <a href="#why">למה אנחנו</a>
+      <a href="#gallery">גלריה</a>
+      <a href="#how">איך זה עובד</a>
+      <a href="#faq">שאלות נפוצות</a>
+      <a href="#contact">צרו קשר</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" style="background-image:url('/assets/img/pool-night-blue.jpg')" role="img" aria-label="מתחם הבריכה הפרטי בתאורת ערב כחולה"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">מתחם בריכה פרטי · לנשים בלבד · פדיה</p>
+        <h1 id="hero-title">מסיבת הבריכה המושלמת שלך<br><span class="grad">מתחילה כאן</span></h1>
+        <p class="hero-sub">מתחם פרטי ודיסקרטי לנשים בלבד – מסיבות רווקות, בת מצווה, ימי גיבוש וימי הולדת.
+          בריכה מחוממת, אזור מקורה, בר והפקה מלאה. אתן רק נהנות, אנחנו דואגים לכל השאר.</p>
+        <div class="hero-actions">
+          <a class="btn btn-wa btn-lg" href="https://wa.me/972505305186?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%99%D7%93%D7%95%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%90%D7%AA%D7%A8%20%F0%9F%8C%B4%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%95%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%91%D7%A8%D7%99%D7%9B%D7%94" target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.5-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8.9-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2l-.1-.5-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3c-.3.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5 0 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.5z"/></svg>
+            לקבלת הצעת מחיר בוואטסאפ
+          </a>
+          <a class="btn btn-ghost btn-lg" href="tel:+972505305186">חייגו 050-530-5186</a>
+        </div>
+        <ul class="hero-badges" aria-label="יתרונות עיקריים">
+          <li>👩 לנשים בלבד</li>
+          <li>🔒 פרטי ודיסקרטי</li>
+          <li>♨️ בריכה מחוממת</li>
+          <li>🎉 הפקה מלאה</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section class="section" id="events" aria-labelledby="events-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">מה חוגגים</p>
+          <h2 id="events-title">אירועים שתפורים בדיוק עליכן</h2>
+          <p class="section-lead">כל אירוע מתוכנן אישית – מהקישוט ועד האווירה – כדי שהיום יהיה בדיוק כמו שחלמתן.</p>
+        </header>
+        <div class="cards">
+          <article class="card">
+            <div class="card-emoji" aria-hidden="true">👰</div>
+            <h3>מסיבות רווקות</h3>
+            <p>חגיגה בלתי נשכחת לכלה ולחברות – פינת "Bride To Be", צילומים, בר, מוזיקה והמון כיף סביב הבריכה.</p>
+          </article>
+          <article class="card">
+            <div class="card-emoji" aria-hidden="true">🎀</div>
+            <h3>בת מצווה</h3>
+            <p>חוויה מפנקת לחתיכ"ה ולחברות שלה – שולחן מעוצב, פעילויות מהנות ואווירה צעירה ובטוחה.</p>
+          </article>
+          <article class="card">
+            <div class="card-emoji" aria-hidden="true">🌴</div>
+            <h3>ימי גיבוש וימי כיף</h3>
+            <p>יום מושלם לקבוצות נשים ולצוותי עבודה – בריכה, משחקים, פינות ישיבה ואפשרות לכיבוד והפקה.</p>
+          </article>
+          <article class="card">
+            <div class="card-emoji" aria-hidden="true">🎂</div>
+            <h3>ימי הולדת ואירועים פרטיים</h3>
+            <p>חוגגות יום הולדת או סתם רוצות לפנק את עצמכן? מתחם פרטי לכל חגיגה נשית במרכז הארץ.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why us -->
+    <section class="section section-alt" id="why" aria-labelledby="why-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">למה אנחנו</p>
+          <h2 id="why-title">הכול במקום אחד, בלי כאב ראש</h2>
+          <p class="section-lead">מתחם פרטי ומאובזר שמשאיר לכן רק דבר אחד לעשות – ליהנות.</p>
+        </header>
+        <div class="features">
+          <div class="feature"><span class="feature-ico" aria-hidden="true">♨️</span><h3>בריכה מחוממת ואזור מקורה</h3><p>נהנים לאורך כל השנה – גם בחורף. אזור מקורה ומחומם לימים קרירים.</p></div>
+          <div class="feature"><span class="feature-ico" aria-hidden="true">🍹</span><h3>בר וקוקטיילים</h3><p>עמדת בר מעוצבת לאירוע, עם אפשרות לשתייה וכיבוד בתיאום מראש.</p></div>
+          <div class="feature"><span class="feature-ico" aria-hidden="true">🎱</span><h3>ביליארד, הגברה וטלוויזיה</h3><p>שולחן ביליארד, פינג-פונג, מערכת סאונד ומסך – בידור לכל אורך האירוע.</p></div>
+          <div class="feature"><span class="feature-ico" aria-hidden="true">✨</span><h3>קישוט והפקה מותאמים</h3><p>עיצוב וקישוט לפי נושא האירוע – פלמינגו, ורדים, נרות ועוד הפתעות.</p></div>
+          <div class="feature"><span class="feature-ico" aria-hidden="true">🔒</span><h3>פרטיות מלאה לנשים</h3><p>מתחם דיסקרטי וסגור לנשים בלבד – משתחררות בלי לחשוב על אף אחד.</p></div>
+          <div class="feature"><span class="feature-ico" aria-hidden="true">📍</span><h3>מיקום נוח במרכז</h3><p>בפדיה, עם גישה קלה מהשרון, מהשפלה וממחוז המרכז, וחניה נוחה.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">גלריה</p>
+          <h2 id="gallery-title">הצצה למתחם ולאירועים</h2>
+          <p class="section-lead">תמונות אמיתיות מהמתחם – יום ולילה. לחצו על תמונה להגדלה.</p>
+        </header>
+        <div class="gallery" id="galleryGrid">
+          <button class="g-item g-wide" data-full="/assets/img/pool-night-blue.jpg"><img src="/assets/img/pool-night-blue.jpg" width="2000" height="900" loading="lazy" alt="בריכה פרטית בתאורת ערב כחולה עם פינות ישיבה ושולחן ביליארד" /></button>
+          <button class="g-item" data-full="/assets/img/pool-day-bachelorette.jpg"><img src="/assets/img/pool-day-bachelorette.jpg" width="1050" height="1400" loading="lazy" alt="מסיבת רווקות ביום ליד הבריכה עם שלט Bride To Be וצף פלמינגו" /></button>
+          <button class="g-item" data-full="/assets/img/marry-me-proposal.jpg"><img src="/assets/img/marry-me-proposal.jpg" width="1200" height="1600" loading="lazy" alt="מעבר ורדים ונרות עם לב Marry Me ליד הבריכה בערב" /></button>
+          <button class="g-item g-wide" data-full="/assets/img/pool-day-floats.jpg"><img src="/assets/img/pool-day-floats.jpg" width="1600" height="720" loading="lazy" alt="בריכה ביום עם מצופים בצורת פלמינגו וברבור ובלונים" /></button>
+          <button class="g-item" data-full="/assets/img/marry-me-heart.jpg"><img src="/assets/img/marry-me-heart.jpg" width="1050" height="1400" loading="lazy" alt="לב ורדים לבן עם הכיתוב Marry Me ונרות בתאורת ערב" /></button>
+          <button class="g-item" data-full="/assets/img/lounge-sunset.jpg"><img src="/assets/img/lounge-sunset.jpg" width="630" height="1400" loading="lazy" alt="פינת ישיבה עם פופים צבעוניים על דשא בשקיעה" /></button>
+          <button class="g-item g-wide" data-full="/assets/img/bride-roses-pool.jpg"><img src="/assets/img/bride-roses-pool.jpg" width="1600" height="720" loading="lazy" alt="אותיות ורדים גדולות BRIDE ליד הבריכה" /></button>
+          <button class="g-item" data-full="/assets/img/billiards-table.jpg"><img src="/assets/img/billiards-table.jpg" width="1080" height="1080" loading="lazy" alt="שולחן ביליארד מקצועי עם כדורים מסודרים" /></button>
+          <button class="g-item" data-full="/assets/img/games-pingpong.jpg"><img src="/assets/img/games-pingpong.jpg" width="1600" height="720" loading="lazy" alt="פינת משחקים עם שולחן פינג-פונג וכדורגל שולחן בגינה" /></button>
+          <button class="g-item" data-full="/assets/img/event-table-setup.jpg"><img src="/assets/img/event-table-setup.jpg" width="1050" height="1400" loading="lazy" alt="שולחן אירוח ארוך ומעוצב במפה צהובה משובצת" /></button>
+          <button class="g-item" data-full="/assets/img/catering-platter.jpg"><img src="/assets/img/catering-platter.jpg" width="1050" height="1400" loading="lazy" alt="מגש כיבוד עשיר ומגוון לאירוע" /></button>
+          <button class="g-item" data-full="/assets/img/marry-me-aisle.jpg"><img src="/assets/img/marry-me-aisle.jpg" width="1054" height="1400" loading="lazy" alt="מעבר לבן עם זרי ורדים ונרות לכיוון לב Marry Me ליד הבריכה" /></button>
+          <button class="g-item g-wide" data-full="/assets/img/pool-night-lounge.jpg"><img src="/assets/img/pool-night-lounge.jpg" width="1600" height="720" loading="lazy" alt="הבריכה בתאורת ערב עם פינות ישיבה לבנות וזרי פרחים" /></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section-alt" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">פשוט ומהיר</p>
+          <h2 id="how-title">איך זה עובד?</h2>
+        </header>
+        <ol class="steps">
+          <li class="step"><span class="step-num">1</span><h3>יוצרים קשר</h3><p>שולחות וואטסאפ או מתקשרות – מספרות לנו על האירוע, התאריך ומספר המשתתפות.</p></li>
+          <li class="step"><span class="step-num">2</span><h3>מתאמים ומתכננים</h3><p>בוחרים חבילה, קישוט והפקה שמתאימים בדיוק לכן, ומקבלות הצעת מחיר אישית וברורה.</p></li>
+          <li class="step"><span class="step-num">3</span><h3>מגיעות ונהנות</h3><p>ביום האירוע הכול מוכן וערוך – אתן פשוט מגיעות, נכנסות לבריכה ונהנות.</p></li>
+        </ol>
+        <div class="center">
+          <a class="btn btn-wa btn-lg" href="https://wa.me/972505305186?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%99%D7%93%D7%95%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%90%D7%AA%D7%A8%20%F0%9F%8C%B4%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%95%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%91%D7%A8%D7%99%D7%9B%D7%94" target="_blank" rel="noopener">בואו נתחיל לתכנן</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container container-narrow">
+        <header class="section-head">
+          <p class="eyebrow">כל מה שרציתן לדעת</p>
+          <h2 id="faq-title">שאלות נפוצות</h2>
+        </header>
+        <div class="faq">
+          <details><summary>איפה ממוקם המתחם?</summary><p>המתחם נמצא בפדיה 13, במרכז הארץ – נגיש בקלות מהשרון, מהשפלה וממחוז המרכז, עם חניה נוחה.</p></details>
+          <details><summary>האם המתחם באמת לנשים בלבד?</summary><p>כן. המתחם פרטי ודיסקרטי ומיועד לנשים בלבד, כדי שתוכלו ליהנות בפרטיות ובחופשיות מלאה.</p></details>
+          <details><summary>האם הבריכה מחוממת? אפשר אירוע גם בחורף?</summary><p>בהחלט. הבריכה מחוממת ויש אזור מקורה ומחומם, כך שאפשר לחגוג לאורך כל השנה – גם בימים קרירים.</p></details>
+          <details><summary>אילו אירועים אפשר לקיים?</summary><p>מסיבות רווקות, חגיגות בת מצווה, ימי גיבוש וימי כיף לקבוצות נשים, ימי הולדת ואירועים פרטיים נוספים.</p></details>
+          <details><summary>מה כולל המתחם?</summary><p>בריכה מחוממת, אזור מקורה ומוצל, פינות ישיבה, בר, שולחן ביליארד ופינת משחקים, מערכת הגברה וטלוויזיה, ואפשרות להפקה וקישוט מותאמים אישית.</p></details>
+          <details><summary>איך מזמינים ומקבלים הצעת מחיר?</summary><p>פשוט מאוד – שולחות הודעת וואטסאפ או מתקשרות ל-050-530-5186, מתאמות תאריך ומקבלות הצעת מחיר אישית לפי סוג האירוע ומספר המשתתפות.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">מתחילות לתכנן?</p>
+          <h2 id="contact-title">דברו איתנו – נשמח לחגוג איתכן</h2>
+          <p class="section-lead">זמינות לכל שאלה ולתיאום הצעת מחיר. בחרו את הדרך הנוחה לכן:</p>
+        </header>
+        <div class="contact-grid">
+          <div class="contact-actions">
+            <a class="contact-row" href="https://wa.me/972505305186?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%99%D7%93%D7%95%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%90%D7%AA%D7%A8%20%F0%9F%8C%B4%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%95%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%91%D7%A8%D7%99%D7%9B%D7%94" target="_blank" rel="noopener">
+              <span class="ci ci-wa">●</span><span><strong>וואטסאפ</strong><br>שליחת הודעה מהירה</span>
+            </a>
+            <a class="contact-row" href="tel:+972505305186">
+              <span class="ci ci-call">●</span><span><strong>טלפון</strong><br>050-530-5186</span>
+            </a>
+            <a class="contact-row" href="https://waze.com/ul?q=%D7%A2%D7%99%D7%93%D7%95%20%D7%9E%D7%A1%D7%99%D7%91%D7%95%D7%AA%20%D7%91%D7%A8%D7%99%D7%9B%D7%94%20%D7%A4%D7%93%D7%99%D7%94&navigate=yes" target="_blank" rel="noopener">
+              <span class="ci ci-map">●</span><span><strong>ניווט</strong><br>פדיה 13 · Waze / Google Maps</span>
+            </a>
+            <a class="contact-row" href="https://www.facebook.com/parttipol" target="_blank" rel="noopener">
+              <span class="ci ci-fb">●</span><span><strong>פייסבוק</strong><br>עידו מסיבות בריכה</span>
+            </a>
+            <p class="hours">🕒 פתוח בכל ימות השבוע · 10:00–24:00 (בתיאום מראש)</p>
+          </div>
+          <div class="contact-map">
+            <iframe title="מפת המתחם – פדיה 13" src="https://maps.google.com/maps?q=%D7%A2%D7%99%D7%93%D7%95%20%D7%9E%D7%A1%D7%99%D7%91%D7%95%D7%AA%20%D7%91%D7%A8%D7%99%D7%9B%D7%94%20%D7%A4%D7%93%D7%99%D7%94&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>עידו מסיבות בריכה</strong>
+        <p>מתחם בריכה פרטי ודיסקרטי לנשים בלבד בפדיה – מסיבות רווקות, בת מצווה, ימי גיבוש וימי הולדת.</p>
+      </div>
+      <nav class="footer-nav" aria-label="ניווט תחתון">
+        <a href="#events">אירועים</a>
+        <a href="#why">למה אנחנו</a>
+        <a href="#gallery">גלריה</a>
+        <a href="#faq">שאלות נפוצות</a>
+        <a href="#contact">צרו קשר</a>
+        <a href="/accessibility.html">הצהרת נגישות</a>
+      </nav>
+      <div class="footer-contact">
+        <a href="tel:+972505305186">050-530-5186</a>
+        <a href="https://www.facebook.com/parttipol" target="_blank" rel="noopener">פייסבוק</a>
+        <span>פדיה 13</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span id="year">2026</span> עידו מסיבות בריכה · כל הזכויות שמורות.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating actions (mobile) -->
+  <div class="fab" aria-hidden="false">
+    <a class="fab-btn fab-wa" href="https://wa.me/972505305186?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%99%D7%93%D7%95%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%90%D7%AA%D7%A8%20%F0%9F%8C%B4%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%95%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%9E%D7%A1%D7%99%D7%91%D7%AA%20%D7%91%D7%A8%D7%99%D7%9B%D7%94" target="_blank" rel="noopener" aria-label="וואטסאפ">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.5-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8.9-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2l-.1-.5-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3c-.3.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5 0 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.4-.5z"/></svg>
+    </a>
+    <a class="fab-btn fab-call" href="tel:+972505305186" aria-label="התקשרו">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+    </a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="תצוגת תמונה">
+    <button class="lb-close" id="lbClose" aria-label="סגירה">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="הקודם">‹</button>
+    <img class="lb-img" id="lbImg" src="" alt="" />
+    <button class="lb-nav lb-next" id="lbNext" aria-label="הבא">›</button>
+  </div>
+
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
