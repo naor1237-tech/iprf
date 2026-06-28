@@ -31,14 +31,19 @@ python3 -m http.server 8000
 # פתחו http://localhost:8000
 ```
 
-## אתר חי (GitHub Pages – אוטומטי)
+## איך מפרסמים את האתר (צריך פעולה אחת)
 
-האתר מתפרסם אוטומטית ב-GitHub Pages בכל push ל-`main` (ראו `.github/workflows/deploy-pages.yml`):
+האתר בנוי ומוכן ב-`main`, אך עדיין לא חי. כל הנתיבים יחסיים, כך שהוא עובד גם תחת נתיב
+משנה (GitHub Pages) וגם מהשורש (Netlify). יש שתי דרכים — בחרו אחת:
 
-* **כתובת חיה:** https://naor1237-tech.github.io/iprf/
+### דרך א' – Netlify (מומלץ, ה-repo נשאר פרטי)
+נותן את הכתובת שביקשת `parttipol.netlify.app`. ראו "פריסה ל-Netlify" למטה.
 
-זוהי תצוגה חיה מיידית. הכתובת המועדפת לפרסום הסופי היא `parttipol.netlify.app` (ראו למטה).
-כל הנתיבים באתר יחסיים, כך שהוא עובד גם תחת נתיב משנה (Pages) וגם מהשורש (Netlify).
+### דרך ב' – GitHub Pages (דורש repo ציבורי)
+GitHub Pages בתוכנית החינמית עובד רק על repo **ציבורי**. כדי להשתמש בו:
+1. *Settings → General → Change visibility → Make public*.
+2. *Actions* → להריץ ידנית את "Deploy to GitHub Pages" (או להוסיף טריגר `push` ב-`deploy-pages.yml`).
+3. כתובת: `https://naor1237-tech.github.io/iprf/`.
 
 ## פריסה ל-Netlify (חינמי)
 

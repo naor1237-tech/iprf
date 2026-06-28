@@ -1,8 +1,13 @@
 name: Deploy to GitHub Pages
 
+# NOTE: GitHub Pages on a PRIVATE repo requires a paid plan. On the free
+# plan, make the repository PUBLIC first, then either run this workflow
+# manually (Actions tab → "Run workflow") or add a push trigger:
+#   on:
+#     push:
+#       branches: [main]
+# Until then this workflow is manual-only so it doesn't fail on every push.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -10,7 +15,6 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
 concurrency:
   group: pages
   cancel-in-progress: true
