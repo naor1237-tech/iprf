@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="עידו מסיבות בריכה">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff5da2"/>
+      <stop offset="1" stop-color="#19b3c6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#g)"/>
+  <path d="M32 10 C 32 10, 46 30, 46 40 a14 14 0 1 1 -28 0 C 18 30, 32 10, 32 10 Z" fill="#ffffff"/>
+  <ellipse cx="26" cy="40" rx="4.5" ry="6" fill="#ffd6e6" opacity="0.7"/>
+</svg>
