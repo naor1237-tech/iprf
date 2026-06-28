@@ -31,19 +31,17 @@ python3 -m http.server 8000
 # פתחו http://localhost:8000
 ```
 
-## איך מפרסמים את האתר (צריך פעולה אחת)
+## האתר חי (GitHub Pages)
 
-האתר בנוי ומוכן ב-`main`, אך עדיין לא חי. כל הנתיבים יחסיים, כך שהוא עובד גם תחת נתיב
-משנה (GitHub Pages) וגם מהשורש (Netlify). יש שתי דרכים — בחרו אחת:
+**🌐 https://naor1237-tech.github.io/iprf/**
 
-### דרך א' – Netlify (מומלץ, ה-repo נשאר פרטי)
-נותן את הכתובת שביקשת `parttipol.netlify.app`. ראו "פריסה ל-Netlify" למטה.
+האתר מתפרסם אוטומטית בכל push ל-`main` דרך GitHub Actions (`.github/workflows/deploy-pages.yml`).
+ה-repo ציבורי ו-Pages מוגדר עם Source = "GitHub Actions".
 
-### דרך ב' – GitHub Pages (דורש repo ציבורי)
-GitHub Pages בתוכנית החינמית עובד רק על repo **ציבורי**. כדי להשתמש בו:
-1. *Settings → General → Change visibility → Make public*.
-2. *Actions* → להריץ ידנית את "Deploy to GitHub Pages" (או להוסיף טריגר `push` ב-`deploy-pages.yml`).
-3. כתובת: `https://naor1237-tech.github.io/iprf/`.
+### מעבר לדומיין אחר בעתיד (למשל parttipol.netlify.app)
+אם תרצו לעבור ל-Netlify או לדומיין בתשלום, צריך לעדכן את כתובות ה-SEO המוחלטות
+(`canonical`, Open Graph, `sitemap.xml`, `robots.txt`, JSON-LD) מ-
+`https://naor1237-tech.github.io/iprf` לכתובת החדשה. הנתיבים היחסיים של הקבצים יעבדו כמו שהם.
 
 ## פריסה ל-Netlify (חינמי)
 
